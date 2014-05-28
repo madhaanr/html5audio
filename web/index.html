@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>audio api test</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script src ="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/lib/jquery.html5Loader.js"></script>
+    <script src="js/html5audio.js"></script>
+    <link rel="stylesheet" href="js/lib/nprogress.css" />
+    <script src="js/lib/nprogress.js"></script>
+</head>
+<body>
+<div id="html5Loader">
+
+</div>
+<div id="wrapper">
+
+
+</div>
+<!--<audio src="js/lib/Stimuli/Kahdeksan.wav" controls loop>
+    <p>no support for audio</p>
+</audio>-->
+
+<script type="text/javascript">
+    $.html5Loader({
+        filesToLoad:"js/lib/files.json",
+        onComplete: function () {
+            console.log("All the assets are loaded!");
+        },
+        onElementLoaded: function ( obj, elm ) {
+           // if(!~$.inArray(obj.type,["TEXT","SCRIPT","CSS"])) {
+                $("#wrapper").append(elm);
+                console.log("wow");
+            //}
+        }
+    });
+</script>
+<!--<script type="text/javascript">
+    $.html5Loader({
+        filesToLoad:        'js/lib/files.json', // this could be a JSON or simply a javascript object
+        onBeforeLoad:       function () {console.log("Ready to load!");},
+        onComplete:         function () {console.log("All the assets are loaded!");},
+        onElementLoaded:    function ( obj, elm) { $("#wrapper").append(elm);
+                                                   console.log("hiii:D");},
+        onUpdate:           function ( percentage ) {}
+    });
+</script>-->
+</body>
+</html>
